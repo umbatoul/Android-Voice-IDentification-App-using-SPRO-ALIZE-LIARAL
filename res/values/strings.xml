@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VoiceRecognizer</string>
+    <string name="acceptoname">ACCEPTO Voice Identification! </string>
+    <string name="action_settings">Settings</string>
+    <string name="infoLearn">Learning in a preferably quiet setting:\n\n When ready, push \&quot;Record\&quot;; when done \&quot;Stop\&quot;.</string>
+    <string name="infoVerif">Verifying (quiet environment pls): When ready, press \&quot;Record\&quot; press \&quot;Stop\&quot; zwhen done.</string>
+    <string name="app_info">Please choose a quiet environment for this recording.\n\nTo start recording press \&quot;Record\&quot; button, to stop recording press \&quot;Stop\&quot; button.</string>
+    <string name="choose_format_title">Choose Audio Format</string>
+    <string name="start_recording">Record</string>
+    <string name="stop_recording">Stop</string>
+    <string name="skiprec">Skip Record</string>
+    <string name="audio_format">Format</string>
+    <string name="train_app">Training the App</string>
+    <string name="start_trainrec">Press to start user training</string>
+    <string name="start_identify">Press to start user identification</string>
+    <string name="name">User YOU</string>
+    <string name="usernm">maybe enter user name here</string>
+    <string name="identify">Choose a quiet environment and speak for 10 sec. When you are ready to start press \"Record\" button. Press \&quot;Stop\&quot; when done</string>
+    <string name="train_user">owner</string> <!-- target wav filename (app owner)for training -->
+    <string name="test_user">impostor</string> <!-- impostor wav filename for verification -->
+    <string name="op_cancel">Operation Canceled</string>
+    <string name="verif_1">u Welcome!</string>
+    <string name="verif_0">This didn\'t sound OK!</string>
+    <string name="version">0.03</string>
+    <string name="titleLearn">Learning Your Voice</string>
+    <string name="titleVerif">Speak to verify</string>
+
+    <string name="default_user">uname</string>
+    <!-- <string name="impostor">person</string> -->
+
+</resources>

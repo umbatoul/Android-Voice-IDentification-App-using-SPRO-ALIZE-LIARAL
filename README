@@ -1,0 +1,56 @@
+
+##########################################################
+#      		Voice IDentification Tool 2014
+#	 Authors: Mageda Sharafeddin, Hussein Sharafeddin 
+#                         and Haitham Akkary
+#								
+#                              October 2014
+#
+#
+##########################################################
+
+
+
+Android-Voice-IDentification-App-using-SPRO-ALIZE-LIARAL
+
+This is a Voice identification package using SPRO, ALIZE, and LIARAL 
+open source tools.
+
+It therefore abides by the same licenses of the respective tools. 
+
+This program is distributed in the hope that it will be useful,          
+but WITHOUT ANY WARRANTY; without even the implied warranty of            
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+SPRO is distributed under the terms of the GNU General Public License          
+as published by the Free Software Foundation; either version 2            
+of the License, or (at your option) any later version.                    
+           
+
+ALIZE is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 of 
+the License, or any later version.
+
+
+
+****************
+Modifications:
+****************
+
+There were two main modifications to SPRO:
+#define MY_REALLOC(X,Y)  (((X)==NULL)? memset(malloc((Y)),0,(Y)):realloc((X),(Y)))
+#define MY_FREE(X) free((X)),(X)=NULL;
+
+All realloc calls in fft.c and spro.c we replaced by MY_REALLOC and all free calls were replaced by MY_FREE call.
+
+
+
+
+The following lines were modified in RecorderActivity code.google.com:
+1-	private static final int RECORDER_SAMPLERATE = 8000;// 16000;
+2-	private static final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_MONO; //STEREO;
+
+
+The package has the files required to reproduce the results reported in paper to be published in
+ICPRAM2015 Jan 10-12 in Lisbon, Portugal

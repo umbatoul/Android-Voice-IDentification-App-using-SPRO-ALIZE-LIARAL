@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.example.VoiceRecognize"
+      android:versionCode="1"
+      android:versionName="1.0">
+    
+     <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+           <!-- android:targetSdkVersion="?" -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
+    
+    <application android:label="VoiceRecognize"
+        android:icon="@drawable/ic_launcher" 
+        android:allowBackup="false">
+        
+        <activity android:name="com.example.VoiceRecognize.VoiceRecognize"
+                  android:label="VoiceRecognize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.VoiceRecognize.RecordForTraining"
+                  android:label="Please help the App learn your voice.">
+            <intent-filter>
+                <action android:name="com.example.RecordForTraining" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+ 
+        
+<!--         <activity android:name="com.example.VoiceRecognize.RecordForWorldTraining"
+                  android:label="Please help the App prepare a database by learning your voice.">
+            <intent-filter>
+                <action android:name="com.example.RecordForWorldTraining" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+             <activity android:name="com.example.VoiceRecognize.RecordForIdentify"
+                  android:label="Please speak a sentence for the APP to identify you.">
+            <intent-filter>
+                <action android:name="com.example.RecordForIdentify" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> -->
+    </application>
+</manifest> 
