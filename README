@@ -51,6 +51,30 @@ The following lines were modified in RecorderActivity code.google.com:
 1-	private static final int RECORDER_SAMPLERATE = 8000;// 16000;
 2-	private static final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_MONO; //STEREO;
 
+The following were modified in ALIZE/LIARAL:
+ _C and _U variable names modified. During run, we noticed some runtime weirdness of wrong values.
+ We tracked it painfully until we discovered that the culprit was a variable name defined in 
+ 1- LIA_SpkTools/include/AccumulateTVStat.h namely Matrix<double> _C;
+    Apparently _C conflicts with some macro name or a special compiler or system name. 
+    When _C was changed to _tC, the problem disappeared.
+    The change had to be mirrored in LIA_SpkTools/src/AccumulateTVStat.cpp
 
-The package has the files required to reproduce the results reported in paper to be published in
+ 2- A similar problem was with _U in /LIA_SpkTools/include/PldaTools.h mirrored in LIA_SpkTools/src/PldaTools.cpp
+changed to _tU in the declaration Eigen::MatrixXd _tU;
+
+
+Note: We had to change jniXcommon.hpp which is used in the entry points to LIA_RAL code to be called in Android.
+
+Finally,
+Debug messages 
+
+#include <jni.h>
+   #include <android/log.h>
+then call
+   __android_log_print(ANDROID_LOG_DEBUG, "SOME FILE or reference name ", " regular printf formatted string with % etc..", varargs); 
+)
+
+
+
+The package has all the files required to reproduce the results reported in conference paper to be published in
 ICPRAM2015 Jan 10-12 in Lisbon, Portugal
